@@ -1,4 +1,4 @@
-@Library('sysadmin') _
+@Library('sysadmin')_
 pipeline {
     agent {
         label 'agent1'
