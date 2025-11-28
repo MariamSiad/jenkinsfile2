@@ -1,1 +1,26 @@
+pipeline {
+    agent {
+        label 'agent1'
+    }
+    tools{
+        maven 'maven-352'
+    } 
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',url: 'https://github.com/Hassan-Eid-Hassan/cicd-lab2.git'
+        }
+        }
+        stage('Build App'){
+            steps{
+                sh 'mvn package install -DskipTests'
+            }
+        }
+        stage('Test App'){
+            steps{
+                sh 'mvn test'
+            }
+        }
 
+    }
+}
