@@ -1,3 +1,4 @@
+@Library('sysadmin') _
 pipeline {
     agent {
         label 'agent1'
@@ -11,16 +12,10 @@ pipeline {
                 git branch: 'main',url: 'https://github.com/Hassan-Eid-Hassan/cicd-lab2.git'
         }
         }
-        stage('Build App'){
-            steps{
-                sh 'mvn package install -DskipTests'
+        stage('Run Shared Library') {
+            steps {
+                buildJava()
             }
         }
-        stage('Test App'){
-            steps{
-                sh 'mvn test'
-            }
-        }
-
     }
 }
