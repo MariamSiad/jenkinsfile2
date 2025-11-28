@@ -7,11 +7,6 @@ pipeline {
         maven 'maven-352'
     } 
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main',url: 'https://github.com/MariamSiad/jenkinsfile2.git'
-        }
-        }
         stage('Run Shared Library') {
             steps {
                 buildJava()
