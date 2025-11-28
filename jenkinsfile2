@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main',url: 'https://github.com/Hassan-Eid-Hassan/cicd-lab2.git'
+                git branch: 'main',url: 'https://github.com/MariamSiad/jenkinsfile2.git'
         }
         }
         stage('Run Shared Library') {
